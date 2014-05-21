@@ -1,14 +1,17 @@
 import Interfaces.BoardI;
 import Interfaces.EvaluatorI;
 import Interfaces.MinMaxI;
+import Interfaces.NineBoardI;
 
 
 public class MinMax implements MinMaxI{
 	private EvaluatorI eval;
 	private int currplayer;
 	private int oppplayer;
+	private NineBoardI nineBoard;
 	
-	public MinMax() {
+	public MinMax(NineBoardI _nineBoard) {
+		this.nineBoard = _nineBoard;
 		eval = new Evaluator();
 	}
 	

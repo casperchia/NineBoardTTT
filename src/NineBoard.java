@@ -22,9 +22,7 @@ public class NineBoard implements NineBoardI {
 				board[row][col] = new Board();
 			}
 		}
-		currentBoard = board[1][1];
 		player = _player;
-		eval = new Evaluator();
 	}
 	@Override
 	public BoardI getBoard(int _x, int _y) {
