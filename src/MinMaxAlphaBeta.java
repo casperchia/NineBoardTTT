@@ -1,6 +1,7 @@
 import Interfaces.BoardI;
 import Interfaces.EvaluatorI;
 import Interfaces.MinMaxI;
+import Interfaces.NineBoardI;
 
 
 public class MinMaxAlphaBeta implements MinMaxI {
@@ -8,8 +9,10 @@ public class MinMaxAlphaBeta implements MinMaxI {
 	private EvaluatorI eval;
 	private int currplayer;
 	private int oppplayer;
+	private NineBoardI nineBoard;
 	
-	public MinMaxAlphaBeta() {
+	public MinMaxAlphaBeta(NineBoardI _nineBoard) {
+		this.nineBoard = _nineBoard;
 		eval = new Evaluator();
 	}
 	

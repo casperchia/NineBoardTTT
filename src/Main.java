@@ -10,25 +10,14 @@ public class Main {
 	
 	public static void main (String[] args) {
 		int[][] state = {
-				{1, -1, -1},
-				{0, -1, -1},
-				{1, -1, 0},
+				{-1, -1, -1},
+				{-1, 1, 0},
+				{-1, -1, -1},
 		};
 		BoardI board = new Board(state);
 		board.printBoard();
-		AI X = new AI(1, 0);
-		AI O = new AI(0, 1);
-		int i=1;
-		while (!board.isOver()) {
-			System.out.println("Turn " + i);
-			X.play(board);
-			board.printBoard();
-			System.out.println("Turn " + (i+1));
-			O.play(board);
-			board.printBoard();
-			i++;
-		}
-		
+		Heuristic h = new Heuristic();
+		System.out.println(h.evaluate(board, 1));
 	}
 	
 }
